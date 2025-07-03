@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>webcube | 5x5</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/jscube/all.js"></script>
+        <script src="../js/jscubeUI/all.js"></script>
+        <script src="../js/polygonLib/all.js"></script>
+        <script src="../js/eventLib/all.js"></script>
+        <script src="../js/keysPressLib/all.js"></script>
+    </head>
+    <body>
+        
+        <table width="100%">
+            <tr>
+                <td>
+                    <canvas id="cubeCanvas5" width="800" height="600"></canvas>
+                </td>
+                <td>
+                    <p>HELP :</p>
+                    <ul>
+                        <li>Press K / M to move Up face</li>
+                        <li>Press O / L to move Right face</li>
+                        <li>Press S / Z to move Left face</li>
+                        <li>Press Q / D to move Down face</li>
+                        <li>Press F / J to move Front face</li>
+                        <li>Mash SPACE to scramble</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <script>
+
+            var canvas = document.getElementById("cubeCanvas5");
+            var cubeBuilder = new CubeBuilder();
+            var cubeDrawer = new Cube5x5Drawer();
+            var cube = cubeBuilder.createCube(5);
+            var moves = new Mover();
+
+            window.onkeydown = function(event){ doKeyBigCube(event.keyCode, event.shiftKey, moves); };
+
+            cubeDrawer.draw(canvas, cube);
+        </script>
+        
+        <a id="return_button" href="../index.html"><img src="../imgs/ingame_buttons/return_button.png" width="100" height="50"></a>
+        <button id="scramble_button" onclick="scramble_big_cube_function();"><img src="../imgs/ingame_buttons/scramble_button.png"></button>
+        <button id="loader_button" onclick="load_save_functions(document.getElementById('load_text').value)"><img src="../imgs/ingame_buttons/load_icon.png"></button>
+        <button id="save_button" onclick="save_seed_function(cube);"><img src="../imgs/ingame_buttons/save_icon.png"></button>
+        <br/>
+
+        <textarea id="load_text" name="loadText" rows="20" cols="70">Enter a cube save right here...</textarea>
+        <textarea id="seed_save" name="seedSave" rows="20" cols="70">Get a cube save right here...</textarea>
+        
+    </body>
+</html>

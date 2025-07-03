@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>webcube | skewb</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/jsskewb/all.js"></script>
+        <script src="../js/polygonLib/all.js"></script>
+        <script src="../js/keysPressLib/all.js"></script>
+        <script src="../js/eventLib/all.js"></script>
+    </head>
+    <body>
+        <table width="100%">
+            <tr>
+                <td>
+                    <canvas id="skewbCanvas" width="800" height="600"></canvas>
+                </td>
+                <td>
+                    <p>Help : </p>
+                    <ul>
+                        <li>Press K / M to move Up corner</li>
+                        <li>Press O / L to move Right corner</li>
+                        <li>Press S / Z to move Left corner</li>
+                        <li>Press F / J to move Front corner</li>
+                        <li>Mash SPACE to scramble</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <script>
+            var canvas = document.getElementById("skewbCanvas");
+            var builderSkewb = new SkewbBuilder();
+            var skewb = builderSkewb.build();
+            var skewbDrawer = new SkewbDrawer();
+            var moves = new SkewbMover();
+
+            window.onkeydown = function(event){ doKeySkewb(event.keyCode, moves); };
+
+            skewbDrawer.draw(canvas, skewb);
+        </script>
+
+        <a id="return_button" href="../index.html"><img src="../imgs/ingame_buttons/return_button.png" width="100" height="50"></a>
+        <button id="scramble_button" onclick="scramble_skewb_function();"><img src="../imgs/ingame_buttons/scramble_button.png"></button>
+        <button id="loader_button" onclick="load_save_skewb_function(document.getElementById('load_text').value);"><img src="../imgs/ingame_buttons/load_icon.png"></button>
+        <button id="save_button" onclick="save_seed_skewb_function(skewb);"><img src="../imgs/ingame_buttons/save_icon.png"></button>
+        <br/>
+
+        <textarea id="load_text" name="loadText" rows="20" cols="70">Enter a minx save right here...</textarea>
+        <textarea id="seed_save" name="seedSave" rows="20" cols="70">Get a minx save right here...</textarea>
+    </body>
+</html>

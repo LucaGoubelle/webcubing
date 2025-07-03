@@ -1,0 +1,35 @@
+------------------------------
+---------- ticket ------------
+------------------------------
+
+--- APP ---
+
+- implement other moves for Megaminx (DL DR)
+- implement Master Kilominx moves (L, F, R, D, DL, etc...)
+- implement Master Kilominx scrambler
+
+- implement gigaminx drawer
+
+--- UI ---
+
+v - add subfolders for images (sorting)
+
+
+
+
+
+
+
+
+--------------------------------
+---------- backlog -------------
+--------------------------------
+
+- implement skewb moves y
+
+
+
+-------------------------------------
+-------- improvement axis -----------
+-------------------------------------
+

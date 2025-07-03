@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>webcube | master kilominx</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/polygonLib/all.js"></script>
+        <script src="../js/keysPressLib/all.js"></script>
+        <script src="../js/eventLib/all.js"></script>
+        <script src="../js/jsminx/all.js"></script>
+        <script src="../js/jsminxUI/all.js"></script>
+    </head>
+    <body>
+        <table width="100%">
+            <tr>
+                <td>
+                    <canvas id="masterKilominxCanvas" width="800" height="600"></canvas>
+                </td>
+                <td>
+                    <p>HELP : </p>
+                    <ul>
+                        <li>Press K / M to move Up face (shift for 2 layers)</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            var canvas = document.getElementById("masterKilominxCanvas");
+            var minxBuilder = new MasterKilominxBuilder();
+            var minxDrawer = new MasterKilominxDrawer();
+            var masterKilominx = minxBuilder.createMasterKilominx();
+
+            window.onkeydown = function(event){ doKeysMasterKilominx(event.keyCode, event.shiftKey); };
+
+            minxDrawer.draw(canvas, masterKilominx);
+        </script>
+
+        <a id="return_button" href="../index.html">
+            <img src="../imgs/ingame_buttons/return_button.png" width="100" height="50">
+        </a>
+        <button id="loader_button" onclick="load_save_masterk_function(document.getElementById('load_text').value);"><img src="../imgs/ingame_buttons/load_icon.png"></button>
+        <button id="save_button" onclick="save_seed_masterk_function(masterKilominx);"><img src="../imgs/ingame_buttons/save_icon.png"></button>
+        <br/>
+
+        <textarea id="load_text" name="loadText" rows="20" cols="70">Enter a minx save right here...</textarea>
+        <textarea id="seed_save" name="seedSave" rows="20" cols="70">Get a minx save right here...</textarea>
+    </body>
+</html>

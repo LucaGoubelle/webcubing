@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>webcube | megaminx</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/polygonLib/all.js"></script>
+        <script src="../js/keysPressLib/all.js"></script>
+        <script src="../js/eventLib/all.js"></script>
+        <script src="../js/jsminx/all.js"></script>
+        <script src="../js/jsminxUI/all.js"></script>
+    </head>
+    <body>
+        <table width="100%">
+            <tr>
+                <td>
+                    <canvas id="megaminxCanvas" width="800" height="600"></canvas>
+                </td>
+                <td>
+                    <p>HELP : </p>
+                    <ul>
+                        <li>Press K / M to move Up face</li>
+                        <li>Press O / L to move Right face</li>
+                        <li>Press S / Z to move Left face</li>
+                        <li>Press F / J to move Front face</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            var canvas = document.getElementById("megaminxCanvas");
+            var minxBuilder = new MegaminxBuilder();
+            var minxDrawer = new MegaminxDrawer();
+            var megaminx = minxBuilder.createMegaminx();
+            
+            window.onkeydown = function(event){ doKeysMegaminx(event.keyCode); };
+
+            var ctx = document.getElementById("megaminxCanvas").getContext('2d');
+            ctx.scale(2, 2);
+            
+            minxDrawer.draw(canvas, megaminx);
+        </script>
+
+        <a id="return_button" href="../index.html"><img src="../imgs/ingame_buttons/return_button.png" width="100" height="50"></a>
+        <button id="scramble_button" onclick="scramble_megaminx_function();"><img src="../imgs/ingame_buttons/scramble_button.png"></button>
+        <button id="loader_button" onclick="load_save_megaminx_function(document.getElementById('load_text').value);"><img src="../imgs/ingame_buttons/load_icon.png"></button>
+        <button id="save_button" onclick="save_seed_megaminx_function(megaminx);"><img src="../imgs/ingame_buttons/save_icon.png"></button>
+        <br/>
+
+        <textarea id="load_text" name="loadText" rows="20" cols="70">Enter a minx save right here...</textarea>
+        <textarea id="seed_save" name="seedSave" rows="20" cols="70">Get a minx save right here...</textarea>
+    </body>
+</html>
