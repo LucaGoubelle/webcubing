@@ -23,5 +23,14 @@ class Cube3x3Scanner extends Cube2x2Scanner {
         };
         return (orient in hmap) ? hmap[orient] : "" ; 
     }
+
+    scanEdges(cube){
+        return {
+            'up_front': this.scanEdge(cube, 'up_front'),
+            'up_left': this.scanEdge(cube, 'up_left'),
+            'up_right':this.scanEdge(cube, 'up_right'),
+            'up_back': this.scanEdge(cube, 'up_back')
+        }
+    }
     
 }
