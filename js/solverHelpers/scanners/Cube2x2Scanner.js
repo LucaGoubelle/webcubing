@@ -10,4 +10,12 @@ class Cube2x2Scanner {
         return (orient in hmap) ? hmap[orient] : "";
     }
 
+    scanCorners(cube){
+        let hmap = {
+            'up_front_right': this.scanCorner(cube, 'up_front_right'),
+            'up_front_left': this.scanCorner(cube, 'up_front_left')
+        };
+        return hmap;
+    }
+
 }
