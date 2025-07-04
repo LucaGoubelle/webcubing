@@ -5,6 +5,10 @@ class CubeDrawer {
         this.stickerDrawer = new StickerDrawer();
     }
 
+    /**
+     * draw front face
+     * @author: LucaGoubelle 
+     */
     _drawFront(canvas, face, x, y, size, offset){
         for(let i=0;i<face.length;i++)
             for(let j=0;j<face.length;j++) {
@@ -17,6 +21,10 @@ class CubeDrawer {
             }
     }
 
+    /**
+     * draw right face
+     * @author: LucaGoubelle 
+     */
     _drawRight(canvas, face, x, y, size, sizeDepth, offset){
         let faceLen = face.length;
         

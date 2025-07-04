@@ -1,5 +1,11 @@
 
 class CubeScrambler {
+
+    /**
+     * scramble a simple cube
+     * 
+     * @author: LucaGoubelle
+     */
     scrambleCube(cube){
         try {
             let scrambles = [
@@ -19,6 +25,11 @@ class CubeScrambler {
         }
     }
 
+    /**
+     * scramble a big cube ( >= 4x4, < 6x6 )
+     * 
+     * @author: LucaGoubelle
+     */
     scrambleBigCube(cube){
         try {
             let scrambles = [
@@ -36,6 +47,11 @@ class CubeScrambler {
         }
     }
 
+    /**
+     * scramble an huge cube ( >= 6x6, < 7x7 )
+     * 
+     * @author: LucaGoubelle
+     */
     scrambleHugeCube(cube){
         try{
             let scramble = "R Dw2 L' Fw2 Bww' Lww Dww' F Bw Dww F Dww2 Rww Lw2 Fw' Rw D2 B D2 Bww2 Fw Dww "
@@ -48,4 +64,5 @@ class CubeScrambler {
             throw new CubeScramblerException();
         }
     }
+    
 }

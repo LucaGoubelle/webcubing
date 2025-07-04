@@ -2,6 +2,11 @@
 // ------------- draw stickers ----------------------
 // ------------- --------- --------------------------
 
+
+/**
+ * Provide methods for drawing stickers (up, front, right)
+ * @author: LucaGoubelle
+ */
 class StickerDrawer {
     drawFrontSticker(canvas, elem, x,y, size){
         let points = [

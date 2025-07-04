@@ -1,4 +1,10 @@
 
+
+/**
+ * A Rubik's cube instance (pure data)
+ * 
+ * @author: LucaGoubelle
+ */
 class Cube {
     
     constructor(back, up, front, left, right, down){

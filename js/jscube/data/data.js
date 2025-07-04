@@ -14,6 +14,12 @@ class CubeBuilder {
         };
     }
 
+
+    /**
+     * Generate a cube's face from size param and elem to fill
+     * 
+     * @author: LucaGoubelle
+     */
     _createFace(size, elem){
         let face = [];
         for(let i=0; i<size; i++){
@@ -25,6 +31,12 @@ class CubeBuilder {
         return face;
     }
 
+
+    /**
+     * Create a cube object based on a size param
+     * 
+     * @author: LucaGoubelle
+     */
     createCube(size){
         try{
             return new Cube(

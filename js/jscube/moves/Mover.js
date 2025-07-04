@@ -7,6 +7,11 @@ class Mover {
         this.wMoves = new WMoves();
     }
 
+    /**
+     * Move the cube with a specific move
+     * 
+     * @author: LucaGoubelle
+     */
     simpleMove(cube, mv){
         try{
             switch(mv){
@@ -67,6 +72,11 @@ class Mover {
         
     }
 
+    /**
+     * Move the cube with a specific sequence of moves
+     * Throw a CubeMoverException if wrong params
+     * @author: LucaGoubelle
+     */
     multiMoves(cube, mvs){
         try{
             let arrMv = mvs.split(" ");
