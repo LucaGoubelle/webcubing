@@ -9,6 +9,7 @@
         <script src="../js/polygonLib/all.js"></script>
         <script src="../js/eventLib/all.js"></script>
         <script src="../js/keysPressLib/all.js"></script>
+        <script src="../js/solvers/solver2x2/all.js"></script>
     </head>
     <body>
         <table width="100%">
@@ -36,6 +37,7 @@
             var cubeDrawer = new Cube2x2Drawer();
             var cube = cubeBuilder.createCube(2);
             var moves = new Mover();
+            var solver = new Solver2x2();
             
             window.onkeydown = function(event){ doKey2x2(event.keyCode, moves); };
             
@@ -47,6 +49,7 @@
         <button id="scramble_button" onclick="scramble_cube_function();"><img src="../imgs/ingame_buttons/scramble_button.png"></button>
         <button id="loader_button" onclick="load_save_functions(document.getElementById('load_text').value)"><img src="../imgs/ingame_buttons/load_icon.png"></button>
         <button id="save_button" onclick="save_seed_function(cube);"><img src="../imgs/ingame_buttons/save_icon.png"></button>
+        <button id="solve_button" onclick="solve2x2CubeFunction();"><img src="../imgs/ingame_buttons/solve_button.png" width="50" height="50"></button>
         <br/>
         
         <textarea id="load_text" name="loadText" rows="20" cols="70">Enter a cube save right here...</textarea>
