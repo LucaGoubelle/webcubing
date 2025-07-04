@@ -29,6 +29,7 @@ class CrownScanner {
 
     _scanUpOfCrown(cube, index){
         let len = cube.up.length;
+        let last = len-1;
         let row = [];
         row.push(cube.left[0][index]);
         for(let i=0;i<len;i++)
