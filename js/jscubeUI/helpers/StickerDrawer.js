@@ -8,6 +8,17 @@
  * @author: LucaGoubelle
  */
 class StickerDrawer {
+    constructor(){
+        this.hmap = {
+            "white": '#ffffff',
+            "blue": '#0000ff',
+            "green": '#00ff00',
+            "red": '#ff0000',
+            "orange": '#ff9600',
+            "yellow": '#ffff00'
+        };
+    }
+
     drawFrontSticker(canvas, elem, x,y, size){
         let points = [
             [x,y], 
@@ -15,7 +26,7 @@ class StickerDrawer {
             [x+size,y+size], 
             [x,y+size]
         ];
-        drawPolygon(canvas, points, elem);
+        drawPolygon(canvas, points, this.hmap[elem]);
     }
 
     drawUpSticker(canvas, elem, x,y, size){
@@ -26,7 +37,7 @@ class StickerDrawer {
             [x+size-sizeDepth,y+sizeDepth], 
             [x-sizeDepth,y+sizeDepth]
         ];
-        drawPolygon(canvas, points, elem);
+        drawPolygon(canvas, points, this.hmap[elem]);
     }
 
     drawRightSticker(canvas, elem, x,y, size){
@@ -37,6 +48,6 @@ class StickerDrawer {
             [x+sizeDepth,y+sizeDepth], 
             [x,y+size]
         ];
-        drawPolygon(canvas, points, elem);
+        drawPolygon(canvas, points, this.hmap[elem]);
     }
 }

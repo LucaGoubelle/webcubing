@@ -3,18 +3,7 @@
 // ------------------ ---- ---------------------
 
 class CubeBuilder {
-    constructor(){
-        this.DICT_COLORS = {
-            white: '#ffffff',
-            yellow: '#ffff00',
-            blue: '#0000ff',
-            red: '#ff0000',
-            green: '#00ff00',
-            orange: '#ff9600'
-        };
-    }
-
-
+    
     /**
      * Generate a cube's face from size param and elem to fill
      * 
@@ -40,12 +29,12 @@ class CubeBuilder {
     createCube(size){
         try{
             return new Cube(
-                this._createFace(size, this.DICT_COLORS.green),
-                this._createFace(size, this.DICT_COLORS.yellow),
-                this._createFace(size, this.DICT_COLORS.blue),
-                this._createFace(size, this.DICT_COLORS.orange),
-                this._createFace(size, this.DICT_COLORS.red),
-                this._createFace(size, this.DICT_COLORS.white)
+                this._createFace(size, "green"),
+                this._createFace(size, "yellow"),
+                this._createFace(size, "blue"),
+                this._createFace(size, "orange"),
+                this._createFace(size, "red"),
+                this._createFace(size, "white")
             );
         } catch(error){
             console.error(error, "size of puzzle must be integer");
