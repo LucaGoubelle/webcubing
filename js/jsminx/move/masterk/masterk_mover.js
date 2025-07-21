@@ -1,5 +1,5 @@
 
-class MasterKilominxMover {
+class MasterKilominxMover extends MinxMover {
     constructor(){
         this.ulrfMoves = new MasterKilominxULRFMoves();
         this.wMoves = new MasterKilominxWMoves();
@@ -17,12 +17,5 @@ class MasterKilominxMover {
 
             default: return minx;
         }
-    }
-
-    multiMoves(minx, mvs){
-        let mvArr = mvs.split(" ");
-        for(let mv of mvArr)
-            minx = this.simpleMove(minx, mv);
-        return minx;
     }
 }

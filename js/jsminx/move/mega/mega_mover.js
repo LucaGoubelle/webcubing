@@ -1,5 +1,5 @@
 
-class MegaminxMover {
+class MegaminxMover extends MinxMover {
 
     constructor(){
         this.ulrfMoves = new MegaminxULRFMoves();
@@ -33,12 +33,5 @@ class MegaminxMover {
             case "y'": return this.axisMoves.moveYPrime(minx);
             default: return minx;
         }
-    }
-
-    multiMoves(minx, mvs){
-        let mvArr = mvs.split(" ");
-        for(let mv of mvArr)
-            minx = this.simpleMove(minx, mv);
-        return minx;
     }
 }
