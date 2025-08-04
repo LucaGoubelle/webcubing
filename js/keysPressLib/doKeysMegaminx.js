@@ -12,8 +12,10 @@ function doKeysMegaminx(k){
         case DICO_KEYS["f"]: megaminx = moverMega.simpleMove(megaminx, "F'"); break;
         case DICO_KEYS["n"]: megaminx = moverMega.simpleMove(megaminx, "D"); break;
         case DICO_KEYS["v"]: megaminx = moverMega.simpleMove(megaminx, "D'"); break;
-        case DICO_KEYS["c"]: megaminx = moverMega.simpleMove(megaminx, "DL"); break;
-        case DICO_KEYS["w"]: megaminx = moverMega.simpleMove(megaminx, "DL'"); break;
+        case DICO_KEYS["d"]: megaminx = moverMega.simpleMove(megaminx, "DL"); break;
+        case DICO_KEYS["q"]: megaminx = moverMega.simpleMove(megaminx, "DL'"); break;
+        case DICO_KEYS["c"]: megaminx = moverMega.simpleMove(megaminx, "DR"); break;
+        case DICO_KEYS["w"]: megaminx = moverMega.simpleMove(megaminx, "DR'"); break;
         case DICO_KEYS["arrowLeft"]: megaminx = moverMega.simpleMove(megaminx, "y"); break;
         case DICO_KEYS["arrowRight"]: megaminx = moverMega.simpleMove(megaminx, "y'"); break;
         default: break;
