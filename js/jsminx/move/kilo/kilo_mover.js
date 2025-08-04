@@ -2,6 +2,7 @@
 class KilominxMover extends MinxMover {
 
     constructor(){
+        super();
         this.ulrfMoves = new KilominxULRFMoves();
         this.dMoves = new KilominxDMoves();
         this.axisMoves = new KilominxAxisMoves();

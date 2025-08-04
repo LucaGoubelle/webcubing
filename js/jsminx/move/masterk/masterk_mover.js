@@ -1,6 +1,7 @@
 
 class MasterKilominxMover extends MinxMover {
     constructor(){
+        super();
         this.ulrfMoves = new MasterKilominxULRFMoves();
         this.wMoves = new MasterKilominxWMoves();
         this.axisMoves = new MasterKilominxAxisMoves();

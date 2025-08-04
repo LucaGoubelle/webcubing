@@ -2,6 +2,7 @@
 class MegaminxMover extends MinxMover {
 
     constructor(){
+        super();
         this.ulrfMoves = new MegaminxULRFMoves();
         this.dMoves = new MegaminxDMoves();
         this.axisMoves = new MegaminxAxisMoves();
