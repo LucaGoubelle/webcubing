@@ -5,7 +5,35 @@ class MegaminxDMoves {
     // ########################
 
     moveDL(minx){
-        //todo: implement this
+        minx.downLeft = MegaminxRotateUtils.rotate(minx.downLeft);
+
+        let newFront = [
+            ["","","","","","",minx.left[0][4], minx.left[0][5], minx.left[0][6], ""],
+            [""]
+        ];
+        let newDownRight = [
+            ["","","","","","", minx.front[0][6], minx.front[0][7], minx.front[0][8], ""],
+            [""]
+        ];
+        let newLeft = [
+            ["","","","",minx.absLeft[0][2], minx.absLeft[0][3], minx.absLeft[0][4], "","",""],
+            [""]
+        ];
+        let newDown = [
+            [minx.downRight[0][8], "", "", "", "", "", "", "", minx.downRight[0][6],minx.downRight[0][7]],
+            [""]
+        ];
+        let newAbsLeft = [
+            ["","", minx.down[0][8], minx.down[0][9], minx.down[0][0], "","","","",""],
+            [""]
+        ];
+
+        minx.front = MegaminxRotateUtils.transfert(minx.front, newFront);
+        minx.downRight = MegaminxRotateUtils.transfert(minx.downRight, newDownRight);
+        minx.left = MegaminxRotateUtils.transfert(minx.left, newLeft);
+        minx.down = MegaminxRotateUtils.transfert(minx.down, newDown);
+        minx.absLeft = MegaminxRotateUtils.transfert(minx.absLeft, newAbsLeft);
+        
         return minx;
     }
 

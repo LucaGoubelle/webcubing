@@ -29,6 +29,10 @@ class MegaminxMover extends MinxMover {
             case "D": return this.dMoves.moveD(minx);
             case "D'": return this.dMoves.moveDPrime(minx);
             case "D2": return this.dMoves.moveD2(minx);
+            
+            case "DL": return this.dMoves.moveDL(minx);
+            case "DL'": return this.dMoves.moveDLPrime(minx);
+            case "DL2": return this.dMoves.moveDL2(minx);
 
             case "y": return this.axisMoves.moveY(minx);
             case "y'": return this.axisMoves.moveYPrime(minx);
