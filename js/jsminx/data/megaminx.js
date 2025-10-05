@@ -1,6 +1,7 @@
 
-class MegaminxBuilder {
+class MegaminxBuilder extends MinxBuilder {
     constructor(){
+        super();
         this.ring1 = 10;
         this.ring2 = 1;
     }
@@ -21,7 +22,7 @@ class MegaminxBuilder {
         return face;
     }
 
-    createMegaminx(){
+    build(){
         return {
             up: this._createFaceMegaminx("gray"),
             front: this._createFaceMegaminx("magenta"),

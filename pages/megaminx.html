@@ -32,7 +32,7 @@
             var canvas = document.getElementById("megaminxCanvas");
             var minxBuilder = new MegaminxBuilder();
             var minxDrawer = new MegaminxDrawer();
-            var megaminx = minxBuilder.createMegaminx();
+            var megaminx = minxBuilder.build();
             
             window.onkeydown = function(event){ doKeysMegaminx(event.keyCode); };
 

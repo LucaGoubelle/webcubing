@@ -1,6 +1,7 @@
 
-class GigaminxBuilder {
+class GigaminxBuilder extends MinxBuilder {
     constructor(){
+        super();
         this.ring1 = 20;
         this.ring2 = 10;
         this.ring3 = 1;
@@ -20,7 +21,7 @@ class GigaminxBuilder {
         return face;
     }
 
-    createGigaminx(){
+    build(){
         return {
             up: this._createFaceGigaminx("gray"),
             front: this._createFaceGigaminx("magenta"),

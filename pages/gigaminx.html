@@ -34,7 +34,7 @@
             var canvas = document.getElementById("gigaminxCanvas");
             var minxBuilder = new GigaminxBuilder();
             var minxDrawer = new GigaminxDrawer();
-            var gigaminx = minxBuilder.createGigaminx();
+            var gigaminx = minxBuilder.build();
 
             minxDrawer.draw(canvas, gigaminx);
         </script>

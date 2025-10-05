@@ -1,31 +1,32 @@
 
-class KilominxBuilder {
+class KilominxBuilder extends MinxBuilder {
     constructor(){
+        super();
         this.kilo_face_size = 5;
     }
 
-    createKilominxFace(elem){
+    _createKilominxFace(elem){
         let face = [];
         for(let i=0;i<this.kilo_face_size;i++) 
             face.push(elem);
         return face;
     }
 
-    createKilominx(){
+    build(){
         return {
-            up: this.createKilominxFace("gray"),
-            front: this.createKilominxFace("magenta"),
-            left: this.createKilominxFace("lime"),
-            right: this.createKilominxFace("beige"),
-            downLeft: this.createKilominxFace("blue"),
-            downRight: this.createKilominxFace("red"),
+            up: this._createKilominxFace("gray"),
+            front: this._createKilominxFace("magenta"),
+            left: this._createKilominxFace("lime"),
+            right: this._createKilominxFace("beige"),
+            downLeft: this._createKilominxFace("blue"),
+            downRight: this._createKilominxFace("red"),
     
-            absLeft: this.createKilominxFace("yellow"),
-            absRight: this.createKilominxFace("green"),
-            backLeft: this.createKilominxFace("orange"),
-            backRight: this.createKilominxFace("cyan"),
-            back: this.createKilominxFace("purple"),
-            down: this.createKilominxFace("white")
+            absLeft: this._createKilominxFace("yellow"),
+            absRight: this._createKilominxFace("green"),
+            backLeft: this._createKilominxFace("orange"),
+            backRight: this._createKilominxFace("cyan"),
+            back: this._createKilominxFace("purple"),
+            down: this._createKilominxFace("white")
         }
     }
 }

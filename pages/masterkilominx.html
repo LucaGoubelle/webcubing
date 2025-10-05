@@ -29,7 +29,7 @@
             var canvas = document.getElementById("masterKilominxCanvas");
             var minxBuilder = new MasterKilominxBuilder();
             var minxDrawer = new MasterKilominxDrawer();
-            var masterKilominx = minxBuilder.createMasterKilominx();
+            var masterKilominx = minxBuilder.build();
 
             window.onkeydown = function(event){ doKeysMasterKilominx(event.keyCode, event.shiftKey); };
 

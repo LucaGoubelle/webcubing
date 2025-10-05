@@ -34,7 +34,7 @@
             var canvas = document.getElementById("kilominxCanvas");
             var minxBuilder = new KilominxBuilder();
             var minxDrawer = new KilominxDrawer();
-            var kilominx = minxBuilder.createKilominx();
+            var kilominx = minxBuilder.build();
             
             window.onkeydown = function(event){ doKeysKilominx(event.keyCode); };
             

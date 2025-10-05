@@ -1,7 +1,8 @@
 
-class MasterKilominxBuilder {
+class MasterKilominxBuilder extends MinxBuilder {
     
     constructor(){
+        super();
         this.ring1 = 15;
         this.ring2 = 5;
     }
@@ -19,7 +20,7 @@ class MasterKilominxBuilder {
         return face;
     }
 
-    createMasterKilominx(){
+    build(){
         return {
             up: this._createFaceMasterKilominx("gray"),
             front: this._createFaceMasterKilominx("magenta"),
