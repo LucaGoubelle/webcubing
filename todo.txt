@@ -17,10 +17,6 @@ v - add subfolders for images (sorting)
 
 
 
-
-
-
-
 --------------------------------
 ---------- backlog -------------
 --------------------------------
@@ -33,3 +29,4 @@ v - add subfolders for images (sorting)
 -------- improvement axis -----------
 -------------------------------------
 
+? - remove static context from rotateHelpers (create instance in moves class)

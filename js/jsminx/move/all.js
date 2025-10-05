@@ -1,5 +1,5 @@
 document.write(`
-<script src="../js/jsminx/move/helpers/helpers.js"></script>
+<script src="../js/jsminx/move/helpers/minxRotateUtils.js"></script>
 <script src="../js/jsminx/move/helpers/kiloRotateUtils.js"></script>
 <script src="../js/jsminx/move/helpers/megaRotateUtils.js"></script>
 <script src="../js/jsminx/move/helpers/masterkRotateUtils.js"></script>

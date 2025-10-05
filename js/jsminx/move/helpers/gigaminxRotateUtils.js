@@ -1,5 +1,5 @@
 
-class GigaminxRotateUtils {
+class GigaminxRotateUtils extends MinxRotateUtils {
 
     static genEmptyFace(){
         let ring1 = 20;

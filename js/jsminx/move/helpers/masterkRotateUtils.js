@@ -1,5 +1,5 @@
 
-class MasterKilominxRotateUtils {
+class MasterKilominxRotateUtils extends MinxRotateUtils {
     static genEmptyFace(){
         let ring1 = 15;
         let ring2 = 5;

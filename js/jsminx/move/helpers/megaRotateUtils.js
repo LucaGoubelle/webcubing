@@ -1,10 +1,11 @@
 
-class MegaminxRotateUtils {
+class MegaminxRotateUtils extends MinxRotateUtils {
 
     static genEmptyFace(){
         let ring1 = 10;
         let row1 = [];
-        for (let i = 0; i < ring1; i++) row1.push("");
+        for (let i = 0; i < ring1; i++) 
+            row1.push("");
         let face = [row1, [""]];
         return face;
     }
