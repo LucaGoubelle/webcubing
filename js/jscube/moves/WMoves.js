@@ -1,8 +1,8 @@
 
-class WMoves {
+class WMoves extends Moves {
 
     constructor(){
-        this.rh = new RotateHelpers();
+        super();
     }
 
     moveUw(cube, nbLayers=2){

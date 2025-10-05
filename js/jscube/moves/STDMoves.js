@@ -1,8 +1,8 @@
 
-class STDMoves {
+class STDMoves extends Moves {
 
     constructor(){
-        this.rh = new RotateHelpers();
+        super();
     }
 
     moveU(cube){

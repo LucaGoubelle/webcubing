@@ -1,9 +1,9 @@
 // TODO: Implement axis moves (x, z)
 
-class AxisMoves {
+class AxisMoves extends Moves {
 
     constructor(){
-        this.rh = new RotateHelpers();
+        super();
     }
 
     moveY(cube){
