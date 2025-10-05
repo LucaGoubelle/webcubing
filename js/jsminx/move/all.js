@@ -3,6 +3,7 @@ document.write(`
 <script src="../js/jsminx/move/helpers/kiloRotateUtils.js"></script>
 <script src="../js/jsminx/move/helpers/megaRotateUtils.js"></script>
 <script src="../js/jsminx/move/helpers/masterkRotateUtils.js"></script>
+<script src="../js/jsminx/move/helpers/gigaminxRotateUtils.js"></script>
 
 <script src="../js/jsminx/move/MinxMover.js"></script>
 
