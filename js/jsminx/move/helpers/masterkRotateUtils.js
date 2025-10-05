@@ -1,6 +1,6 @@
 
 class MasterKilominxRotateUtils extends MinxRotateUtils {
-    static genEmptyFace(){
+    genEmptyFace(){
         let ring1 = 15;
         let ring2 = 5;
         let row1 = [];
@@ -13,7 +13,7 @@ class MasterKilominxRotateUtils extends MinxRotateUtils {
         return face;
     }
 
-    static rotate(face){
+    rotate(face){
         let newFace = this.genEmptyFace();
 
         newFace[0][0] = face[0][12];
@@ -41,7 +41,7 @@ class MasterKilominxRotateUtils extends MinxRotateUtils {
         return newFace;
     }
 
-    static rotateAsync(face){
+    rotateAsync(face){
         let newFace = this.genEmptyFace();
 
         newFace[0][0] = face[0][3];
@@ -69,7 +69,7 @@ class MasterKilominxRotateUtils extends MinxRotateUtils {
         return newFace;
     }
 
-    static transfert(face, newFace){
+    transfert(face, newFace){
         for(let i=0; i<face[0].length;i++)
             face[0][i] = (newFace[0][i]!="") ? newFace[0][i] : face[0][i];
         for(let i=0; i<face[1].length;i++)

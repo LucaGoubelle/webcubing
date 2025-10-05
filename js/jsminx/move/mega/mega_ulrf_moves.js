@@ -1,8 +1,8 @@
 
-class MegaminxULRFMoves {
+class MegaminxULRFMoves extends MegaminxMoves {
 
     moveU(minx){
-        minx.up = MegaminxRotateUtils.rotate(minx.up);
+        minx.up = this.rh.rotate(minx.up);
         // to implement
         let newFront = [[minx.right[0][0], minx.right[0][1], minx.right[0][2],
             "", "", "", "", "", "", ""], [""]
@@ -20,11 +20,11 @@ class MegaminxULRFMoves {
             "", "", "", "", "", "", ""], [""]
         ];
 
-        minx.front = MegaminxRotateUtils.transfert(minx.front, newFront);
-        minx.left = MegaminxRotateUtils.transfert(minx.left, newLeft);
-        minx.right = MegaminxRotateUtils.transfert(minx.right, newRight);
-        minx.backLeft = MegaminxRotateUtils.transfert(minx.backLeft, newBackLeft);
-        minx.backRight = MegaminxRotateUtils.transfert(minx.backRight, newBackRight);
+        minx.front = this.rh.transfert(minx.front, newFront);
+        minx.left = this.rh.transfert(minx.left, newLeft);
+        minx.right = this.rh.transfert(minx.right, newRight);
+        minx.backLeft = this.rh.transfert(minx.backLeft, newBackLeft);
+        minx.backRight = this.rh.transfert(minx.backRight, newBackRight);
     
         return minx;
     }
@@ -46,7 +46,7 @@ class MegaminxULRFMoves {
     // #################################
 
     moveR(minx){
-        minx.right = MegaminxRotateUtils.rotate(minx.right);
+        minx.right = this.rh.rotate(minx.right);
 
         let newUp = [
             ["", "", minx.front[0][2], minx.front[0][3], minx.front[0][4], "", "", "", "", ""],
@@ -69,11 +69,11 @@ class MegaminxULRFMoves {
             [""]
         ];
 
-        minx.up = MegaminxRotateUtils.transfert(minx.up, newUp);
-        minx.front = MegaminxRotateUtils.transfert(minx.front, newFront);
-        minx.downRight = MegaminxRotateUtils.transfert(minx.downRight, newDownRight);
-        minx.absRight = MegaminxRotateUtils.transfert(minx.absRight, newAbsRight);
-        minx.backRight = MegaminxRotateUtils.transfert(minx.backRight, newBackRight);
+        minx.up = this.rh.transfert(minx.up, newUp);
+        minx.front = this.rh.transfert(minx.front, newFront);
+        minx.downRight = this.rh.transfert(minx.downRight, newDownRight);
+        minx.absRight = this.rh.transfert(minx.absRight, newAbsRight);
+        minx.backRight = this.rh.transfert(minx.backRight, newBackRight);
 
         return minx;
     }
@@ -95,7 +95,7 @@ class MegaminxULRFMoves {
     // #################################
 
     moveL(minx){
-        minx.left = MegaminxRotateUtils.rotate(minx.left);
+        minx.left = this.rh.rotate(minx.left);
 
         let newUp = [
             ["", "", "", "", "", "", minx.backLeft[0][2],minx.backLeft[0][3],minx.backLeft[0][4], ""], 
@@ -118,11 +118,11 @@ class MegaminxULRFMoves {
             [""]
         ];
 
-        minx.up = MegaminxRotateUtils.transfert(minx.up, newUp);
-        minx.front = MegaminxRotateUtils.transfert(minx.front, newFront);
-        minx.downLeft = MegaminxRotateUtils.transfert(minx.downLeft, newDownLeft);
-        minx.backLeft = MegaminxRotateUtils.transfert(minx.backLeft, newBackLeft);
-        minx.absLeft = MegaminxRotateUtils.transfert(minx.absLeft, newAbsLeft);
+        minx.up = this.rh.transfert(minx.up, newUp);
+        minx.front = this.rh.transfert(minx.front, newFront);
+        minx.downLeft = this.rh.transfert(minx.downLeft, newDownLeft);
+        minx.backLeft = this.rh.transfert(minx.backLeft, newBackLeft);
+        minx.absLeft = this.rh.transfert(minx.absLeft, newAbsLeft);
 
         return minx;
     }
@@ -144,7 +144,7 @@ class MegaminxULRFMoves {
     // #################################
 
     moveF(minx){
-        minx.front = MegaminxRotateUtils.rotate(minx.front);
+        minx.front = this.rh.rotate(minx.front);
 
         let newUp = [
             ["","","","", minx.left[0][2], minx.left[0][3], minx.left[0][4], "", "", ""],
@@ -167,11 +167,11 @@ class MegaminxULRFMoves {
             [""]
         ];
 
-        minx.up = MegaminxRotateUtils.transfert(minx.up, newUp);
-        minx.left = MegaminxRotateUtils.transfert(minx.left, newLeft);
-        minx.right = MegaminxRotateUtils.transfert(minx.right, newRight);
-        minx.downLeft = MegaminxRotateUtils.transfert(minx.downLeft, newDownLeft);
-        minx.downRight = MegaminxRotateUtils.transfert(minx.downRight, newDownRight);
+        minx.up = this.rh.transfert(minx.up, newUp);
+        minx.left = this.rh.transfert(minx.left, newLeft);
+        minx.right = this.rh.transfert(minx.right, newRight);
+        minx.downLeft = this.rh.transfert(minx.downLeft, newDownLeft);
+        minx.downRight = this.rh.transfert(minx.downRight, newDownRight);
         
         return minx;
     }

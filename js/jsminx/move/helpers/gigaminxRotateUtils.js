@@ -1,7 +1,7 @@
 
 class GigaminxRotateUtils extends MinxRotateUtils {
 
-    static genEmptyFace(){
+    genEmptyFace(){
         let ring1 = 20;
         let ring2 = 10;
         let ring3 = 1;
@@ -19,7 +19,7 @@ class GigaminxRotateUtils extends MinxRotateUtils {
     }
 
     
-    static rotate(face){
+    rotate(face){
         let newFace = this.genEmptyFace();
 
         newFace[0][0] = face[0][16];
@@ -59,7 +59,7 @@ class GigaminxRotateUtils extends MinxRotateUtils {
         return newFace;
     }
     
-    static rotateAsync(face){
+    rotateAsync(face){
         let newFace = this.genEmptyFace();
 
         newFace[0][0] = face[0][4];
@@ -99,7 +99,7 @@ class GigaminxRotateUtils extends MinxRotateUtils {
         return newFace;
     }
     
-    static transfert(face, newFace){
+    transfert(face, newFace){
         for(let i=0; i<face[0].length;i++)
             face[0][i] = (newFace[0][i]!="") ? newFace[0][i] : face[0][i];
         for(let i=0; i<face[1].length;i++)

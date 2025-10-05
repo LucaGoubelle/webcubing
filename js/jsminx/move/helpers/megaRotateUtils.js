@@ -1,7 +1,7 @@
 
 class MegaminxRotateUtils extends MinxRotateUtils {
 
-    static genEmptyFace(){
+    genEmptyFace(){
         let ring1 = 10;
         let row1 = [];
         for (let i = 0; i < ring1; i++) 
@@ -10,7 +10,7 @@ class MegaminxRotateUtils extends MinxRotateUtils {
         return face;
     }
 
-    static rotate(face){
+    rotate(face){
         let newFace = this.genEmptyFace();
 
         newFace[0][0] = face[0][8];
@@ -29,13 +29,13 @@ class MegaminxRotateUtils extends MinxRotateUtils {
         return newFace;
     }
 
-    static rotateAsync(face){
+    rotateAsync(face){
         for (let i = 0; i <4; i++)
             face = this.rotate(face);
         return face;
     }
 
-    static transfert(face, newFace){
+    transfert(face, newFace){
         for(let i = 0; i <face[0].length; i++)
             face[0][i] = (newFace[0][i]!="") ? newFace[0][i] : face[0][i];
         face[1][0] = (newFace[1][0]!="") ? newFace[1][0] : face[1][0];

@@ -1,8 +1,8 @@
 
-class MegaminxAxisMoves {
+class MegaminxAxisMoves extends MegaminxMoves {
     moveY(minx){
-        minx.up = MegaminxRotateUtils.rotate(minx.up);
-        minx.down = MegaminxRotateUtils.rotateAsync(minx.down);
+        minx.up = this.rh.rotate(minx.up);
+        minx.down = this.rh.rotateAsync(minx.down);
 
         let newFront = JSON.parse(JSON.stringify(minx.right));
         let newLeft = JSON.parse(JSON.stringify(minx.front));
@@ -16,17 +16,17 @@ class MegaminxAxisMoves {
         let newBack = JSON.parse(JSON.stringify(minx.absLeft));
         let newAbsLeft = JSON.parse(JSON.stringify(minx.downLeft));
 
-        minx.front = MegaminxRotateUtils.transfert(minx.front, newFront);
-        minx.right = MegaminxRotateUtils.transfert(minx.right, newRight);
-        minx.left = MegaminxRotateUtils.transfert(minx.left, newLeft);
-        minx.backLeft = MegaminxRotateUtils.transfert(minx.backLeft, newBackLeft);
-        minx.backRight = MegaminxRotateUtils.transfert(minx.backRight, newBackRight);
+        minx.front = this.rh.transfert(minx.front, newFront);
+        minx.right = this.rh.transfert(minx.right, newRight);
+        minx.left = this.rh.transfert(minx.left, newLeft);
+        minx.backLeft = this.rh.transfert(minx.backLeft, newBackLeft);
+        minx.backRight = this.rh.transfert(minx.backRight, newBackRight);
 
-        minx.downLeft = MegaminxRotateUtils.transfert(minx.downLeft, newDownLeft);
-        minx.downRight = MegaminxRotateUtils.transfert(minx.downRight, newDownRight);
-        minx.back = MegaminxRotateUtils.transfert(minx.back, newBack);
-        minx.absLeft = MegaminxRotateUtils.transfert(minx.absLeft, newAbsLeft);
-        minx.absRight = MegaminxRotateUtils.transfert(minx.absRight, newAbsRight);
+        minx.downLeft = this.rh.transfert(minx.downLeft, newDownLeft);
+        minx.downRight = this.rh.transfert(minx.downRight, newDownRight);
+        minx.back = this.rh.transfert(minx.back, newBack);
+        minx.absLeft = this.rh.transfert(minx.absLeft, newAbsLeft);
+        minx.absRight = this.rh.transfert(minx.absRight, newAbsRight);
 
         return minx;
     }

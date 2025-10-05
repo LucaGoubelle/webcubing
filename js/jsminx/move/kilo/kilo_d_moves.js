@@ -1,7 +1,7 @@
 
-class KilominxDMoves {
+class KilominxDMoves extends KilominxMoves {
     moveDL(minx){
-        minx.downLeft = KilominxRotateUtils.rotate(minx.downLeft);
+        minx.downLeft = this.rh.rotate(minx.downLeft);
     
         let newFront = ["", "", "", minx.left[2], minx.left[3]];
         let newLeft = ["", "", minx.absLeft[1], minx.absLeft[2], ""];
@@ -9,11 +9,11 @@ class KilominxDMoves {
         let newDownRight = ["", "", "", minx.front[3], minx.front[4]];
         let newDown = [minx.downRight[4], "", "", "", minx.downRight[3]];
     
-        minx.front = KilominxRotateUtils.transfert(minx.front, newFront);
-        minx.left = KilominxRotateUtils.transfert(minx.left, newLeft);
-        minx.absLeft = KilominxRotateUtils.transfert(minx.absLeft, newAbsLeft);
-        minx.downRight = KilominxRotateUtils.transfert(minx.downRight, newDownRight);
-        minx.down = KilominxRotateUtils.transfert(minx.down, newDown);
+        minx.front = this.rh.transfert(minx.front, newFront);
+        minx.left = this.rh.transfert(minx.left, newLeft);
+        minx.absLeft = this.rh.transfert(minx.absLeft, newAbsLeft);
+        minx.downRight = this.rh.transfert(minx.downRight, newDownRight);
+        minx.down = this.rh.transfert(minx.down, newDown);
     
         return minx;
     }

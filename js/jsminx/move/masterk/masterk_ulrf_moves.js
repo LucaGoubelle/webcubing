@@ -1,7 +1,7 @@
 
-class MasterKilominxULRFMoves {
+class MasterKilominxULRFMoves extends MKMoves {
     moveU(minx){
-        minx.up = MasterKilominxRotateUtils.rotate(minx.up);
+        minx.up = this.rh.rotate(minx.up);
         let newFront = [
             [
                 minx.right[0][0], minx.right[0][1], minx.right[0][2], minx.right[0][3],
@@ -43,11 +43,11 @@ class MasterKilominxULRFMoves {
             ["","","","",""]
         ];
         
-        minx.front = MasterKilominxRotateUtils.transfert(minx.front, newFront);
-        minx.left = MasterKilominxRotateUtils.transfert(minx.left, newLeft);
-        minx.right = MasterKilominxRotateUtils.transfert(minx.right, newRight);
-        minx.backLeft = MasterKilominxRotateUtils.transfert(minx.backLeft, newBackLeft);
-        minx.backRight = MasterKilominxRotateUtils.transfert(minx.backRight, newBackRight);
+        minx.front = this.rh.transfert(minx.front, newFront);
+        minx.left = this.rh.transfert(minx.left, newLeft);
+        minx.right = this.rh.transfert(minx.right, newRight);
+        minx.backLeft = this.rh.transfert(minx.backLeft, newBackLeft);
+        minx.backRight = this.rh.transfert(minx.backRight, newBackRight);
 
         return minx;
     }

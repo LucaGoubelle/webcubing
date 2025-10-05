@@ -7,4 +7,8 @@ class MinxMover {
             minx = this.simpleMove(minx, mv);
         return minx;
     }
+
+    simpleMove(minx, mv){
+        throw new Error("NotImplementedError");
+    }
 }

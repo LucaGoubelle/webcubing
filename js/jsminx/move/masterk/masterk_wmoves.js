@@ -1,7 +1,7 @@
 
-class MasterKilominxWMoves {
+class MasterKilominxWMoves extends MKMoves {
     moveUw(minx){
-        minx.up = MasterKilominxRotateUtils.rotate(minx.up);
+        minx.up = this.rh.rotate(minx.up);
         // todo: implement this method
         let newFront = [
             [
@@ -44,11 +44,11 @@ class MasterKilominxWMoves {
             [minx.backLeft[1][0],minx.backLeft[1][1],"","",""]
         ];
         
-        minx.front = MasterKilominxRotateUtils.transfert(minx.front, newFront);
-        minx.left = MasterKilominxRotateUtils.transfert(minx.left, newLeft);
-        minx.right = MasterKilominxRotateUtils.transfert(minx.right, newRight);
-        minx.backLeft = MasterKilominxRotateUtils.transfert(minx.backLeft, newBackLeft);
-        minx.backRight = MasterKilominxRotateUtils.transfert(minx.backRight, newBackRight);
+        minx.front = this.rh.transfert(minx.front, newFront);
+        minx.left = this.rh.transfert(minx.left, newLeft);
+        minx.right = this.rh.transfert(minx.right, newRight);
+        minx.backLeft = this.rh.transfert(minx.backLeft, newBackLeft);
+        minx.backRight = this.rh.transfert(minx.backRight, newBackRight);
 
         return minx;
     }
