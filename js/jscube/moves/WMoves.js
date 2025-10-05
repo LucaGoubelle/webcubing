@@ -1,12 +1,18 @@
 
 class WMoves {
+
+    constructor(){
+        this.rh = new RotateHelpers();
+    }
+
     moveUw(cube, nbLayers=2){
-        cube.up = rotate(cube.up);
+        cube.up = this.rh.rotate(cube.up);
         let size = cube.up.length;
-        let newFront = genEmptyFace(size);
-        let newLeft = genEmptyFace(size);
-        let newRight = genEmptyFace(size);
-        let newBack = genEmptyFace(size);
+
+        let newFront = this.rh.genEmptyFace(size);
+        let newLeft = this.rh.genEmptyFace(size);
+        let newRight = this.rh.genEmptyFace(size);
+        let newBack = this.rh.genEmptyFace(size);
 
         for(let j=0;j<nbLayers;j++){
             for (let i = 0; i<size; i++){
@@ -17,10 +23,10 @@ class WMoves {
             }
         }
 
-        cube.front = transfert(cube.front, newFront);
-        cube.left = transfert(cube.left, newLeft);
-        cube.right = transfert(cube.right, newRight);
-        cube.back = transfert(cube.back, newBack);
+        cube.front = this.rh.transfert(cube.front, newFront);
+        cube.left = this.rh.transfert(cube.left, newLeft);
+        cube.right = this.rh.transfert(cube.right, newRight);
+        cube.back = this.rh.transfert(cube.back, newBack);
         return cube;
     }
     
@@ -37,12 +43,13 @@ class WMoves {
     }
 
     moveDw(cube, nbLayers=2){
-        cube.down = rotate(cube.down);
+        cube.down = this.rh.rotate(cube.down);
         let size = cube.down.length;
-        let newFront = genEmptyFace(size);
-        let newLeft = genEmptyFace(size);
-        let newRight = genEmptyFace(size);
-        let newBack = genEmptyFace(size);
+
+        let newFront = this.rh.genEmptyFace(size);
+        let newLeft = this.rh.genEmptyFace(size);
+        let newRight = this.rh.genEmptyFace(size);
+        let newBack = this.rh.genEmptyFace(size);
 
         for(let j = 0; j <nbLayers; j++){
             for(let i=0;i<size;i++){
@@ -53,10 +60,10 @@ class WMoves {
             }
         }
 
-        cube.front = transfert(cube.front, newFront);
-        cube.left = transfert(cube.left, newLeft);
-        cube.right = transfert(cube.right, newRight);
-        cube.back = transfert(cube.back, newBack);
+        cube.front = this.rh.transfert(cube.front, newFront);
+        cube.left = this.rh.transfert(cube.left, newLeft);
+        cube.right = this.rh.transfert(cube.right, newRight);
+        cube.back = this.rh.transfert(cube.back, newBack);
         return cube;
     }
 
@@ -73,12 +80,14 @@ class WMoves {
     }
 
     moveLw(cube, nbLayers=2){
-        cube.left = rotate(cube.left);
+        cube.left = this.rh.rotate(cube.left);
         let size = cube.left.length;
-        let newUp = genEmptyFace(size);
-        let newFront = genEmptyFace(size);
-        let newDown = genEmptyFace(size);
-        let newBack = genEmptyFace(size);
+
+        let newUp = this.rh.genEmptyFace(size);
+        let newFront = this.rh.genEmptyFace(size);
+        let newDown = this.rh.genEmptyFace(size);
+        let newBack = this.rh.genEmptyFace(size);
+
         for(let j=0;j<nbLayers;j++){
             for(let i=0;i<size;i++){
                 newFront[i][j] = cube.up[i][j];
@@ -87,10 +96,10 @@ class WMoves {
                 newUp[i][size-(1+j)] = cube.back[i][size-(1+j)];
             }
         }
-        cube.front = transfert(cube.front, newFront);
-        cube.up = transfert(cube.up, rotateTwice(newUp));
-        cube.down = transfert(cube.down, newDown);
-        cube.back = transfert(cube.back, rotateTwice(newBack));
+        cube.front = this.rh.transfert(cube.front, newFront);
+        cube.up = this.rh.transfert(cube.up, this.rh.rotateTwice(newUp));
+        cube.down = this.rh.transfert(cube.down, newDown);
+        cube.back = this.rh.transfert(cube.back, this.rh.rotateTwice(newBack));
         return cube;
     }
     
@@ -107,12 +116,14 @@ class WMoves {
     }
     
     moveRw(cube, nbLayers=2){
-        cube.right = rotate(cube.right);
+        cube.right = this.rh.rotate(cube.right);
         let size = cube.right.length;
-        let newFront = genEmptyFace(size);
-        let newUp = genEmptyFace(size);
-        let newBack = genEmptyFace(size);
-        let newDown = genEmptyFace(size);
+
+        let newFront = this.rh.genEmptyFace(size);
+        let newUp = this.rh.genEmptyFace(size);
+        let newBack = this.rh.genEmptyFace(size);
+        let newDown = this.rh.genEmptyFace(size);
+
         for(let j=0;j<nbLayers;j++){
             for(let i=0;i<size;i++){
                 newFront[i][size-(1+j)] = cube.down[i][size-(1+j)];
@@ -121,10 +132,10 @@ class WMoves {
                 newDown[i][0+j] = cube.back[i][0+j];
             }
         }
-        cube.front = transfert(cube.front, newFront);
-        cube.up = transfert(cube.up, newUp);
-        cube.back = transfert(cube.back, rotateTwice(newBack));
-        cube.down = transfert(cube.down, rotateTwice(newDown));
+        cube.front = this.rh.transfert(cube.front, newFront);
+        cube.up = this.rh.transfert(cube.up, newUp);
+        cube.back = this.rh.transfert(cube.back, this.rh.rotateTwice(newBack));
+        cube.down = this.rh.transfert(cube.down, this.rh.rotateTwice(newDown));
         return cube;
     }
     
@@ -141,12 +152,13 @@ class WMoves {
     }
 
     moveFw(cube, nbLayers=2){
-        cube.front = rotate(cube.front);
+        cube.front = this.rh.rotate(cube.front);
         let size = cube.front.length;
-        let newUp = genEmptyFace(size);
-        let newLeft = genEmptyFace(size);
-        let newRight = genEmptyFace(size);
-        let newDown = genEmptyFace(size);
+
+        let newUp = this.rh.genEmptyFace(size);
+        let newLeft = this.rh.genEmptyFace(size);
+        let newRight = this.rh.genEmptyFace(size);
+        let newDown = this.rh.genEmptyFace(size);
 
         for(let j=0;j<nbLayers;j++){
             for(let i=0;i<size;i++){
@@ -157,10 +169,10 @@ class WMoves {
             }
         }
 
-        cube.up = transfert(cube.up, rotate(newUp));
-        cube.left = transfert(cube.left, rotate(newLeft));
-        cube.right = transfert(cube.right, rotate(newRight));
-        cube.down = transfert(cube.down, rotate(newDown));
+        cube.up = this.rh.transfert(cube.up, this.rh.rotate(newUp));
+        cube.left = this.rh.transfert(cube.left, this.rh.rotate(newLeft));
+        cube.right = this.rh.transfert(cube.right, this.rh.rotate(newRight));
+        cube.down = this.rh.transfert(cube.down, this.rh.rotate(newDown));
         return cube;
     }
 

@@ -1,22 +1,29 @@
 
 class STDMoves {
+
+    constructor(){
+        this.rh = new RotateHelpers();
+    }
+
     moveU(cube){
-        cube.up = rotate(cube.up);
+        cube.up = this.rh.rotate(cube.up);
         let size = cube.up.length;
-        let newFront = genEmptyFace(size);
-        let newLeft = genEmptyFace(size);
-        let newRight = genEmptyFace(size);
-        let newBack = genEmptyFace(size);
+
+        let newFront = this.rh.genEmptyFace(size);
+        let newLeft = this.rh.genEmptyFace(size);
+        let newRight = this.rh.genEmptyFace(size);
+        let newBack = this.rh.genEmptyFace(size);
+
         for (let i = 0; i<cube.up.length; i++){
             newFront[0][i] = cube.right[0][i];
             newLeft[0][i] = cube.front[0][i];
             newRight[0][i] = cube.back[0][i];
             newBack[0][i] = cube.left[0][i];
         }
-        cube.front = transfert(cube.front, newFront);
-        cube.left = transfert(cube.left, newLeft);
-        cube.right = transfert(cube.right, newRight);
-        cube.back = transfert(cube.back, newBack);
+        cube.front = this.rh.transfert(cube.front, newFront);
+        cube.left = this.rh.transfert(cube.left, newLeft);
+        cube.right = this.rh.transfert(cube.right, newRight);
+        cube.back = this.rh.transfert(cube.back, newBack);
         return cube;
     }
 
@@ -33,22 +40,24 @@ class STDMoves {
     }
 
     moveD(cube){
-        cube.down = rotate(cube.down);
+        cube.down = this.rh.rotate(cube.down);
         let size = cube.down.length;
-        let newFront = genEmptyFace(size);
-        let newLeft = genEmptyFace(size);
-        let newRight = genEmptyFace(size);
-        let newBack = genEmptyFace(size);
+
+        let newFront = this.rh.genEmptyFace(size);
+        let newLeft = this.rh.genEmptyFace(size);
+        let newRight = this.rh.genEmptyFace(size);
+        let newBack = this.rh.genEmptyFace(size);
+
         for(let i=0;i<size;i++){
             newFront[size-1][i] = cube.left[size-1][i];
             newLeft[size-1][i] = cube.back[size-1][i];
             newRight[size-1][i] = cube.front[size-1][i];
             newBack[size-1][i] = cube.right[size-1][i];
         }
-        cube.front = transfert(cube.front, newFront);
-        cube.left = transfert(cube.left, newLeft);
-        cube.right = transfert(cube.right, newRight);
-        cube.back = transfert(cube.back, newBack);
+        cube.front = this.rh.transfert(cube.front, newFront);
+        cube.left = this.rh.transfert(cube.left, newLeft);
+        cube.right = this.rh.transfert(cube.right, newRight);
+        cube.back = this.rh.transfert(cube.back, newBack);
         return cube;
     }
     
@@ -65,22 +74,24 @@ class STDMoves {
     }
 
     moveL(cube){
-        cube.left = rotate(cube.left);
+        cube.left = this.rh.rotate(cube.left);
         let size = cube.left.length;
-        let newUp = genEmptyFace(size);
-        let newFront = genEmptyFace(size);
-        let newDown = genEmptyFace(size);
-        let newBack = genEmptyFace(size);
+
+        let newUp = this.rh.genEmptyFace(size);
+        let newFront = this.rh.genEmptyFace(size);
+        let newDown = this.rh.genEmptyFace(size);
+        let newBack = this.rh.genEmptyFace(size);
+
         for(let i=0;i<size;i++){
             newFront[i][0] = cube.up[i][0];
             newDown[i][0] = cube.front[i][0];
             newBack[i][0] = cube.down[i][0];
             newUp[i][size-1] = cube.back[i][size-1];
         }
-        cube.front = transfert(cube.front, newFront);
-        cube.up = transfert(cube.up, rotateTwice(newUp));
-        cube.down = transfert(cube.down, newDown);
-        cube.back = transfert(cube.back, rotateTwice(newBack));
+        cube.front = this.rh.transfert(cube.front, newFront);
+        cube.up = this.rh.transfert(cube.up, this.rh.rotateTwice(newUp));
+        cube.down = this.rh.transfert(cube.down, newDown);
+        cube.back = this.rh.transfert(cube.back, this.rh.rotateTwice(newBack));
         return cube;
     }
 
@@ -97,22 +108,24 @@ class STDMoves {
     }
 
     moveR(cube){
-        cube.right = rotate(cube.right);
+        cube.right = this.rh.rotate(cube.right);
         let size = cube.right.length;
-        let newFront = genEmptyFace(size);
-        let newUp = genEmptyFace(size);
-        let newBack = genEmptyFace(size);
-        let newDown = genEmptyFace(size);
+
+        let newFront = this.rh.genEmptyFace(size);
+        let newUp = this.rh.genEmptyFace(size);
+        let newBack = this.rh.genEmptyFace(size);
+        let newDown = this.rh.genEmptyFace(size);
+
         for(let i=0;i<cube.right.length;i++){
             newFront[i][size-1] = cube.down[i][size-1];
             newUp[i][size-1] = cube.front[i][size-1];
             newBack[i][size-1] = cube.up[i][size-1];
             newDown[i][0] = cube.back[i][0];
         }
-        cube.front = transfert(cube.front, newFront);
-        cube.up = transfert(cube.up, newUp);
-        cube.back = transfert(cube.back, rotateTwice(newBack));
-        cube.down = transfert(cube.down, rotateTwice(newDown));
+        cube.front = this.rh.transfert(cube.front, newFront);
+        cube.up = this.rh.transfert(cube.up, newUp);
+        cube.back = this.rh.transfert(cube.back, this.rh.rotateTwice(newBack));
+        cube.down = this.rh.transfert(cube.down, this.rh.rotateTwice(newDown));
         return cube;
     }
     
@@ -129,22 +142,24 @@ class STDMoves {
     }
 
     moveF(cube){
-        cube.front = rotate(cube.front);
+        cube.front = this.rh.rotate(cube.front);
         let size = cube.front.length;
-        let newUp = genEmptyFace(size);
-        let newLeft = genEmptyFace(size);
-        let newRight = genEmptyFace(size);
-        let newDown = genEmptyFace(size);
+
+        let newUp = this.rh.genEmptyFace(size);
+        let newLeft = this.rh.genEmptyFace(size);
+        let newRight = this.rh.genEmptyFace(size);
+        let newDown = this.rh.genEmptyFace(size);
+
         for(let i=0;i<size;i++){
             newUp[i][size-1] = cube.left[i][size-1];
             newLeft[0][i] = cube.down[0][i];
             newRight[size-1][i] = cube.up[size-1][i];
             newDown[i][0] = cube.right[i][0];
         }
-        cube.up = transfert(cube.up, rotate(newUp));
-        cube.left = transfert(cube.left, rotate(newLeft));
-        cube.right = transfert(cube.right, rotate(newRight));
-        cube.down = transfert(cube.down, rotate(newDown));
+        cube.up = this.rh.transfert(cube.up, this.rh.rotate(newUp));
+        cube.left = this.rh.transfert(cube.left, this.rh.rotate(newLeft));
+        cube.right = this.rh.transfert(cube.right, this.rh.rotate(newRight));
+        cube.down = this.rh.transfert(cube.down, this.rh.rotate(newDown));
         return cube;
     }
     
