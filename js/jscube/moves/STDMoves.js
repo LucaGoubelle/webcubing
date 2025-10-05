@@ -1,10 +1,6 @@
 
 class STDMoves extends Moves {
 
-    constructor(){
-        super();
-    }
-
     moveU(cube){
         cube.up = this.rh.rotate(cube.up);
         let size = cube.up.length;

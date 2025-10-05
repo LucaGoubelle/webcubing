@@ -1,10 +1,6 @@
 
 class WMoves extends Moves {
 
-    constructor(){
-        super();
-    }
-
     moveUw(cube, nbLayers=2){
         cube.up = this.rh.rotate(cube.up);
         let size = cube.up.length;

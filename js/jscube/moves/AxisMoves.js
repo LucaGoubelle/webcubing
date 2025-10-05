@@ -2,18 +2,14 @@
 
 class AxisMoves extends Moves {
 
-    constructor(){
-        super();
-    }
-
     moveY(cube){
         cube.up = this.rh.rotate(cube.up);
         cube.down = this.rh.rotateAsync(cube.down);
     
-        let newFront = JSON.parse(JSON.stringify(cube.right));
-        let newRight = JSON.parse(JSON.stringify(cube.back));
-        let newLeft = JSON.parse(JSON.stringify(cube.front));
-        let newBack = JSON.parse(JSON.stringify(cube.left));
+        let newFront = this.rh.copyFace(cube.right);
+        let newRight = this.rh.copyFace(cube.back);
+        let newLeft = this.rh.copyFace(cube.front);
+        let newBack = this.rh.copyFace(cube.left);
     
         cube.front = this.rh.transfert(cube.front, newFront);
         cube.right = this.rh.transfert(cube.right, newRight);
