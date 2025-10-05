@@ -22,20 +22,20 @@ class GigaminxBuilder extends MinxBuilder {
     }
 
     build(){
-        return {
-            up: this._createFaceGigaminx("gray"),
-            front: this._createFaceGigaminx("magenta"),
-            left: this._createFaceGigaminx("lime"),
-            right: this._createFaceGigaminx("beige"),
-            downLeft: this._createFaceGigaminx("blue"),
-            downRight: this._createFaceGigaminx("red"),
+        return new Minx(
+            this._createFaceGigaminx("gray"),
+            this._createFaceGigaminx("magenta"),
+            this._createFaceGigaminx("lime"),
+            this._createFaceGigaminx("beige"),
+            this._createFaceGigaminx("blue"),
+            this._createFaceGigaminx("red"),
 
-            backLeft: this._createFaceGigaminx("orange"),
-            backRight: this._createFaceGigaminx("cyan"),
-            back: this._createFaceGigaminx("purple"),
-            absLeft: this._createFaceGigaminx("yellow"),
-            absRight: this._createFaceGigaminx("green"),
-            down: this._createFaceGigaminx("white"),
-        };
+            this._createFaceGigaminx("yellow"),
+            this._createFaceGigaminx("green"),
+            this._createFaceGigaminx("orange"),
+            this._createFaceGigaminx("cyan"),
+            this._createFaceGigaminx("purple"),
+            this._createFaceGigaminx("white")
+        );
     }
 }

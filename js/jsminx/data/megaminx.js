@@ -23,20 +23,20 @@ class MegaminxBuilder extends MinxBuilder {
     }
 
     build(){
-        return {
-            up: this._createFaceMegaminx("gray"),
-            front: this._createFaceMegaminx("magenta"),
-            left: this._createFaceMegaminx("lime"),
-            right: this._createFaceMegaminx("beige"),
-            downLeft: this._createFaceMegaminx("blue"),
-            downRight: this._createFaceMegaminx("red"),
+        return new Minx(
+            this._createFaceMegaminx("gray"),
+            this._createFaceMegaminx("magenta"),
+            this._createFaceMegaminx("lime"),
+            this._createFaceMegaminx("beige"),
+            this._createFaceMegaminx("blue"),
+            this._createFaceMegaminx("red"),
 
-            backLeft: this._createFaceMegaminx("orange"),
-            backRight: this._createFaceMegaminx("cyan"),
-            back: this._createFaceMegaminx("purple"),
-            absLeft: this._createFaceMegaminx("yellow"),
-            absRight: this._createFaceMegaminx("green"),
-            down: this._createFaceMegaminx("white"),
-        };
+            this._createFaceMegaminx("yellow"),
+            this._createFaceMegaminx("green"),
+            this._createFaceMegaminx("orange"),
+            this._createFaceMegaminx("cyan"),
+            this._createFaceMegaminx("purple"),
+            this._createFaceMegaminx("white")
+        );
     }
 }

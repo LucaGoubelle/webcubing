@@ -21,20 +21,20 @@ class MasterKilominxBuilder extends MinxBuilder {
     }
 
     build(){
-        return {
-            up: this._createFaceMasterKilominx("gray"),
-            front: this._createFaceMasterKilominx("magenta"),
-            left: this._createFaceMasterKilominx("lime"),
-            right: this._createFaceMasterKilominx("beige"),
-            downLeft: this._createFaceMasterKilominx("blue"),
-            downRight: this._createFaceMasterKilominx("red"),
+        return new Minx(
+            this._createFaceMasterKilominx("gray"),
+            this._createFaceMasterKilominx("magenta"),
+            this._createFaceMasterKilominx("lime"),
+            this._createFaceMasterKilominx("beige"),
+            this._createFaceMasterKilominx("blue"),
+            this._createFaceMasterKilominx("red"),
 
-            backLeft: this._createFaceMasterKilominx("orange"),
-            backRight: this._createFaceMasterKilominx("cyan"),
-            back: this._createFaceMasterKilominx("purple"),
-            absLeft: this._createFaceMasterKilominx("yellow"),
-            absRight: this._createFaceMasterKilominx("green"),
-            down: this._createFaceMasterKilominx("white"),
-        };
+            this._createFaceMasterKilominx("yellow"),
+            this._createFaceMasterKilominx("green"),
+            this._createFaceMasterKilominx("orange"),
+            this._createFaceMasterKilominx("cyan"),
+            this._createFaceMasterKilominx("purple"),
+            this._createFaceMasterKilominx("white")
+        );
     }
 }
