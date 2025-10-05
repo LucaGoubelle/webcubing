@@ -1,7 +1,6 @@
 
-class MegaminxBuilder extends MinxBuilder {
+class MegaminxBuilder {
     constructor(){
-        super();
         this.ring1 = 10;
         this.ring2 = 1;
     }
@@ -12,9 +11,9 @@ class MegaminxBuilder extends MinxBuilder {
         let layer2 = [];
 
         for(let i=0;i<this.ring1;i++) 
-            layer1.push(this.DICT_COLORS[elem]);
+            layer1.push(elem);
         for(let i=0;i<this.ring2;i++) 
-            layer2.push(this.DICT_COLORS[elem]);
+            layer2.push(elem);
 
         face.push(layer1);
         face.push(layer2);

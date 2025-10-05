@@ -1,7 +1,7 @@
 
-class MasterKilominxBuilder extends MinxBuilder {
+class MasterKilominxBuilder {
+    
     constructor(){
-        super();
         this.ring1 = 15;
         this.ring2 = 5;
     }
@@ -10,8 +10,10 @@ class MasterKilominxBuilder extends MinxBuilder {
         let face = [];
         let layer1 = [];
         let layer2 = [];
-        for(let i=0;i<this.ring1;i++) layer1.push(this.DICT_COLORS[elem]);
-        for(let i=0;i<this.ring2;i++) layer2.push(this.DICT_COLORS[elem]);
+        for(let i=0;i<this.ring1;i++) 
+            layer1.push(elem);
+        for(let i=0;i<this.ring2;i++) 
+            layer2.push(elem);
         face.push(layer1);
         face.push(layer2);
         return face;

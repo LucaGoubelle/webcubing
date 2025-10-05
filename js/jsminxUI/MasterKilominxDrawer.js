@@ -1,7 +1,8 @@
-// TODO: implement this
 
-class MasterKilominxDrawer {
+
+class MasterKilominxDrawer extends MinxDrawer {
     constructor(){
+        super();
         this.front_polygons = [
             [
                 [[161,128], [220,128], [202,184], [143,184]],
@@ -161,53 +162,53 @@ class MasterKilominxDrawer {
     }
     
     draw(canvas, minx){
-        this._drawFrontFace(canvas, minx);
-        this._drawUpFace(canvas, minx);
-        this._drawLeftFace(canvas, minx);
-        this._drawRightFace(canvas, minx);
-        this._drawDownLeftFace(canvas, minx);
-        this._drawDownRightFace(canvas, minx);
+        this._drawFrontFace(canvas, minx.front);
+        this._drawUpFace(canvas, minx.up);
+        this._drawLeftFace(canvas, minx.left);
+        this._drawRightFace(canvas, minx.right);
+        this._drawDownLeftFace(canvas, minx.downLeft);
+        this._drawDownRightFace(canvas, minx.downRight);
     }
 
-    _drawFrontFace(canvas, minx){
+    _drawFrontFace(canvas, face){
         for(let i = 0; i < this.front_polygons[0].length; i++)
-            drawPolygon(canvas, this.front_polygons[0][i], minx.front[0][i]);
+            drawPolygon(canvas, this.front_polygons[0][i], this.DICT_COLORS[face[0][i]]);
         for(let i = 0; i < this.front_polygons[1].length; i++)
-            drawPolygon(canvas, this.front_polygons[1][i], minx.front[1][i]);
+            drawPolygon(canvas, this.front_polygons[1][i], this.DICT_COLORS[face[1][i]]);
     }
 
-    _drawUpFace(canvas, minx){
+    _drawUpFace(canvas, face){
         for(let i = 0; i < this.up_polygons[0].length; i++)
-            drawPolygon(canvas, this.up_polygons[0][i], minx.up[0][i]);
+            drawPolygon(canvas, this.up_polygons[0][i], this.DICT_COLORS[face[0][i]]);
         for(let i = 0; i < this.up_polygons[1].length; i++)
-            drawPolygon(canvas, this.up_polygons[1][i], minx.up[1][i]);
+            drawPolygon(canvas, this.up_polygons[1][i], this.DICT_COLORS[face[1][i]]);
     }
 
-    _drawLeftFace(canvas, minx){
+    _drawLeftFace(canvas, face){
         for(let i = 0; i < this.left_polygons[0].length; i++)
-            drawPolygon(canvas, this.left_polygons[0][i], minx.left[0][i]);
+            drawPolygon(canvas, this.left_polygons[0][i], this.DICT_COLORS[face[0][i]]);
         for(let i = 0; i < this.left_polygons[1].length; i++)
-            drawPolygon(canvas, this.left_polygons[1][i], minx.left[1][i]);
+            drawPolygon(canvas, this.left_polygons[1][i], this.DICT_COLORS[face[1][i]]);
     }
 
-    _drawRightFace(canvas, minx){
+    _drawRightFace(canvas, face){
         for(let i = 0; i < this.right_polygons[0].length; i++)
-            drawPolygon(canvas, this.right_polygons[0][i], minx.right[0][i]);
+            drawPolygon(canvas, this.right_polygons[0][i], this.DICT_COLORS[face[0][i]]);
         for(let i = 0; i < this.right_polygons[1].length; i++)
-            drawPolygon(canvas, this.right_polygons[1][i], minx.right[1][i]);
+            drawPolygon(canvas, this.right_polygons[1][i], this.DICT_COLORS[face[1][i]]);
     }
 
-    _drawDownLeftFace(canvas, minx){
+    _drawDownLeftFace(canvas, face){
         for(let i = 0; i < this.downLeft_polygons[0].length; i++)
-            drawPolygon(canvas, this.downLeft_polygons[0][i], minx.downLeft[0][i]);
+            drawPolygon(canvas, this.downLeft_polygons[0][i], this.DICT_COLORS[face[0][i]]);
         for(let i = 0; i < this.downLeft_polygons[1].length; i++)
-            drawPolygon(canvas, this.downLeft_polygons[1][i], minx.downLeft[1][i]);
+            drawPolygon(canvas, this.downLeft_polygons[1][i], this.DICT_COLORS[face[1][i]]);
     }
     
-    _drawDownRightFace(canvas, minx){
+    _drawDownRightFace(canvas, face){
         for(let i = 0; i < this.downRight_polygons[0].length; i++)
-            drawPolygon(canvas, this.downRight_polygons[0][i], minx.downRight[0][i]);
+            drawPolygon(canvas, this.downRight_polygons[0][i], this.DICT_COLORS[face[0][i]]);
         for(let i = 0; i < this.downRight_polygons[1].length; i++)
-            drawPolygon(canvas, this.downRight_polygons[1][i], minx.downRight[1][i]);
+            drawPolygon(canvas, this.downRight_polygons[1][i], this.DICT_COLORS[face[1][i]]);
     }
 }

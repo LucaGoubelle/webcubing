@@ -1,39 +1,41 @@
 // TODO: implement this
 
-class GigaminxDrawer {
-    constructor(){}
+class GigaminxDrawer extends MinxDrawer {
+    constructor(){
+        super();
+    }
 
     draw(canvas, minx){
-        this._drawFrontFace(canvas, minx);
-        this._drawUpFace(canvas, minx);
-        this._drawLeftFace(canvas, minx);
-        this._drawRightFace(canvas, minx);
-        this._drawDownLeftFace(canvas, minx);
-        this._drawDownRightFace(canvas, minx);
+        this._drawFrontFace(canvas, minx.front);
+        this._drawUpFace(canvas, minx.up);
+        this._drawLeftFace(canvas, minx.left);
+        this._drawRightFace(canvas, minx.right);
+        this._drawDownLeftFace(canvas, minx.downLeft);
+        this._drawDownRightFace(canvas, minx.downRight);
     }
 
-    _drawFrontFace(canvas, minx){
+    _drawFrontFace(canvas, face){
         //todo: implement this
-        drawPolygon(canvas, [[161,128], [196,128], [185,162], [151,161]], minx.front[0][0]);
+        drawPolygon(canvas, [[161,128], [196,128], [185,162], [151,161]], this.DICT_COLORS[face[0][0]]);
     }
 
-    _drawUpFace(canvas, minx){
-        //todo: implement this
-    }
-
-    _drawLeftFace(canvas, minx){
+    _drawUpFace(canvas, face){
         //todo: implement this
     }
 
-    _drawRightFace(canvas, minx){
+    _drawLeftFace(canvas, face){
         //todo: implement this
     }
 
-    _drawDownLeftFace(canvas, minx){
+    _drawRightFace(canvas, face){
+        //todo: implement this
+    }
+
+    _drawDownLeftFace(canvas, face){
         //todo: implement this
     }
     
-    _drawDownRightFace(canvas, minx){
+    _drawDownRightFace(canvas, face){
         //todo: implement this
     }
 }

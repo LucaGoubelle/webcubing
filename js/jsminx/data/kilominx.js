@@ -1,13 +1,13 @@
 
-class KilominxBuilder extends MinxBuilder {
+class KilominxBuilder {
     constructor(){
-        super();
         this.kilo_face_size = 5;
     }
 
     createKilominxFace(elem){
         let face = [];
-        for(let i=0;i<this.kilo_face_size;i++) face.push(this.DICT_COLORS[elem]);
+        for(let i=0;i<this.kilo_face_size;i++) 
+            face.push(elem);
         return face;
     }
 

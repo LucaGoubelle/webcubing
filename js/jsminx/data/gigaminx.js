@@ -1,7 +1,6 @@
 
-class GigaminxBuilder extends MinxBuilder {
+class GigaminxBuilder {
     constructor(){
-        super();
         this.ring1 = 20;
         this.ring2 = 10;
         this.ring3 = 1;
@@ -12,9 +11,9 @@ class GigaminxBuilder extends MinxBuilder {
         let layer1 = [];
         let layer2 = [];
         let layer3 = [];
-        for(let i=0;i<this.ring1;i++) layer1.push(this.DICT_COLORS[elem]);
-        for(let i=0;i<this.ring2;i++) layer2.push(this.DICT_COLORS[elem]);
-        for(let i=0;i<this.ring3;i++) layer3.push(this.DICT_COLORS[elem]);
+        for(let i=0;i<this.ring1;i++) layer1.push(elem);
+        for(let i=0;i<this.ring2;i++) layer2.push(elem);
+        for(let i=0;i<this.ring3;i++) layer3.push(elem);
         face.push(layer1);
         face.push(layer2);
         face.push(layer3);
