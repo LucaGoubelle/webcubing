@@ -4,12 +4,14 @@ class KilominxAxisMoves {
         minx.up = KilominxRotateUtils.rotate(minx.up);
         minx.down = KilominxRotateUtils.rotateAsync(minx.down);
 
+        //TODO: can use KilominxRotateUtils.copyFace()
         let newFront = JSON.parse(JSON.stringify(minx.right));
         let newLeft = JSON.parse(JSON.stringify(minx.front));
         let newRight = JSON.parse(JSON.stringify(minx.backRight));
         let newBackLeft = JSON.parse(JSON.stringify(minx.left));
         let newBackRight = JSON.parse(JSON.stringify(minx.backLeft));
 
+        //TODO: can use KilominxRotateUtils.copyFace()
         let newDownLeft = JSON.parse(JSON.stringify(minx.downRight));
         let newDownRight = JSON.parse(JSON.stringify(minx.absRight));
         let newAbsRight = JSON.parse(JSON.stringify(minx.back));
