@@ -15,6 +15,10 @@ class RotateHelpers {
         return face;
     }
 
+    copyFace(face){
+        return JSON.parse(JSON.stringify(face));
+    }
+
     rotate(face){
         let size = face.length;
         let newFace = this.genEmptyFace(size);
