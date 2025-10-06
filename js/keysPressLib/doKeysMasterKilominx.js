@@ -4,6 +4,8 @@ function doKeysMasterKilominx(k, shiftmod){
     switch(k){
         case DICO_KEYS["k"]: masterKilominx = (shiftmod) ? moverMK.simpleMove(masterKilominx, "Uw") : moverMK.simpleMove(masterKilominx, "U"); break;
         case DICO_KEYS["m"]: masterKilominx = (shiftmod) ? moverMK.simpleMove(masterKilominx, "Uw'") : moverMK.simpleMove(masterKilominx, "U'"); break;
+        case DICO_KEYS["o"]: masterKilominx = moverMK.simpleMove(masterKilominx, "R"); break;
+        case DICO_KEYS["l"]: masterKilominx = moverMK.simpleMove(masterKilominx, "R'"); break;
 
         case DICO_KEYS["arrowLeft"]: masterKilominx = moverMK.simpleMove(masterKilominx, "y"); break;
         case DICO_KEYS["arrowRight"]: masterKilominx = moverMK.simpleMove(masterKilominx, "y'"); break;

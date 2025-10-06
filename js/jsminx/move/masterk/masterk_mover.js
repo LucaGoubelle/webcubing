@@ -13,6 +13,8 @@ class MasterKilominxMover extends MinxMover {
             case "U'": return this.ulrfMoves.moveUPrime(minx);
             case "Uw": return this.wMoves.moveUw(minx);
             case "Uw'": return this.wMoves.moveUwPrime(minx);
+            case "R": return this.ulrfMoves.moveR(minx);
+            case "R'": return this.ulrfMoves.moveRPrime(minx);
             case "y": return this.axisMoves.moveY(minx);
             case "y'": return this.axisMoves.moveYPrime(minx);
 

@@ -59,7 +59,53 @@ class MasterKilominxULRFMoves extends MKMoves {
     }
 
     moveR(minx){
-        //todo: implement this method
+        minx.right = this.rh.rotate(minx.right);
+        let newFront = [
+            [
+                "", "", "", 
+                minx.downRight[0][0], minx.downRight[0][1], minx.downRight[0][2], minx.downRight[0][3],
+                "","","","","", "","",""
+            ],
+            ["","","","",""]
+        ];
+        let newUp = [
+            [
+                "","","",
+                minx.front[0][3], minx.front[0][4], minx.front[0][5], minx.front[0][6],
+                "","","","","", "","",""
+            ],
+            ["","","","",""]
+        ];
+        let newBackRight = [
+            [
+                minx.up[0][6], 
+                "","","","","", "","","", "","","",
+                minx.up[0][3], minx.up[0][4], minx.up[0][5]
+            ], 
+            ["","","","",""]
+        ];  
+        let newDownRight = [
+            [
+                minx.absRight[0][12], minx.absRight[0][13], minx.absRight[0][14], minx.absRight[0][0],
+                "","","","","", "","","", "","",""
+            ],
+            ["","","","",""]
+        ];
+        let newAbsRight = [
+            [
+                minx.backRight[0][0],
+                "","","","","", "","","", "","","", 
+                minx.backRight[0][12], minx.backRight[0][13], minx.backRight[0][14], 
+            ],
+            ["","","","",""]
+        ];
+
+        minx.front = this.rh.transfert(minx.front, newFront);
+        minx.up = this.rh.transfert(minx.up, newUp);
+        minx.backRight = this.rh.transfert(minx.backRight, newBackRight);
+        minx.downRight = this.rh.transfert(minx.downRight, newDownRight);
+        minx.absRight = this.rh.transfert(minx.absRight, newAbsRight);
+
         return minx;
     }
 
