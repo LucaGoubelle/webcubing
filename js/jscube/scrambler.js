@@ -1,6 +1,10 @@
 
 class CubeScrambler {
 
+    _genRandint(max){
+        return Math.floor(Math.random() * (max - 0 + 1) + 0);
+    }
+
     /**
      * scramble a simple cube
      * 
@@ -15,7 +19,7 @@ class CubeScrambler {
                 "R2 L' U2 R2 B2 R' B' D R2 L2 U D' B' D F2 L' F' D' F' U' F U2 R2 U R2",
                 "L' B F U' F L B2 U2 D R' D L2 U F' D U2 L' D B2 U R' L D2 F R2"
             ];
-            let randint = Math.floor(Math.random() * (scrambles.length-1 - 0 + 1) + 0);
+            let randint = this._genRandint(scrambles.length-1);
             let scrambling = scrambles[randint];
             cube = moves.multiMoves(cube, scrambling);
             return cube;
@@ -37,7 +41,7 @@ class CubeScrambler {
                 "F Lw2 F' Uw' Fw B' Lw2 Fw Lw2 D Fw2 D' U' R U2 B' D' F' Rw Lw2 U Dw2 Bw' L' Fw L",
                 "Fw' Lw' Uw' F' U' L F' Dw' B2 Rw D F2 Lw2 Dw U R L2 F2 U2 L' Fw' U2 F2 R Fw2"
             ];
-            let randint = Math.floor(Math.random() * (scrambles.length-1 - 0 + 1) + 0);
+            let randint = this._genRandint(scrambles.length-1);
             let scrambling = scrambles[randint];
             cube = moves.multiMoves(cube, scrambling);
             return cube;
